@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.OData.Edm</id>
+    <version>6.10.0</version>
+    <title>EdmLib</title>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <licenseUrl>http://go.microsoft.com/?linkid=9809688</licenseUrl>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkId=220868</projectUrl>
+    <iconUrl>http://static.tumblr.com/hgchgxz/9ualgdf98/icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Classes to represent, construct, parse, serialize and validate entity data models. Supports OData v4 only. Targets .NET Portable Lib with support for .NET 4.0, SL 5.0, Win Phone 8, Win Phone 8.1, and Win 8. Localized for CHS, CHT, DEU, ESN, FRA, ITA, JPN, KOR and RUS.
+OData .NET library is open source at http://odata.codeplex.com</description>
+    <summary>Classes to represent, construct, parse, serialize and validate entity data models. Supports OData v4 only.</summary>
+    <releaseNotes>New Features:
+    [GitHub issue #1] EdmLib now supports EdmError/EdmLocation containing file name.
+    [GitHub issue #26] OData Client for .NET now supports getting instance annotations from payload or getting metadata annotations.
+    [GitHub issue #41] OData Client for .NET now supports posting an action with entity valued parameters that only contain setted properties.
+
+Bug Fixes:
+    [GitHub issue #34] Fix a bug that OData Client for .NET did not follow the ABNF rule for OData-Version/OData-MaxVersion header.
+    [GitHub issue #47] Fix a bug that EdmReader could not parse the undefined Enum type in EnumMember.
+    [GitHub issue #61] Fix a bug that EnumMember could not reference an Enum type defined outside current schema.
+    [GitHub issue #66] Fix a bug that ODataUriParser failed to parse a  null value for a nullable enum function parameter in Enum qualified namespace free mode.</releaseNotes>
+    <tags>wcf data services odata odatalib edmlib spatial ado.net ef entity framework open protocol wcfds wcfdataservices dataservices</tags>
+  </metadata>
+</package>
