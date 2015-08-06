@@ -25,7 +25,7 @@ namespace ODataReferentialConstraintSample
         }
 
         [HttpGet]
-        public bool MyFunction(int id, string someString)
+        public bool MyFunction(int id, [FromODataUri] string someString)
         {
             Console.WriteLine(id + " " + someString);
             return true;
