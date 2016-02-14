@@ -116,8 +116,8 @@ namespace ODataActionsSample.Controllers
 
         // Check out a list of movies.
         [HttpPost]
-        [EnableQuery]
-        public ICollection<Movie> CheckOutMany(ODataActionParameters parameters)
+        [ExpandNumbersQueryAttribute]
+        public IHttpActionResult CheckOutMany(ODataActionParameters parameters)
         {
             if (!ModelState.IsValid)
             {
@@ -147,7 +147,15 @@ namespace ODataActionsSample.Controllers
             }
 
             // Return a list of the movies that were checked out.
-            return results;
+            var models = results.Select(x => new MovieModel
+            {
+                ID = x.ID,
+                Title = x.Title,
+                DueDate = x.DueDate,
+                Year = x.Year
+            });
+            return Ok(models);
+
         }
 
         [HttpPost]
@@ -194,6 +202,19 @@ namespace ODataActionsSample.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+    }
+
+    public class ExpandNumbersQueryAttribute : EnableQueryAttribute
+    {
+        public override object ApplyQuery(object entity, ODataQueryOptions queryOptions)
+        {
+            return base.ApplyQuery(entity, queryOptions);
+        }
+
+        public override IQueryable ApplyQuery(IQueryable queryable, ODataQueryOptions queryOptions)
+        {
+            return base.ApplyQuery(queryable, queryOptions);
         }
     }
 }
